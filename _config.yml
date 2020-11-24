@@ -40,10 +40,10 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "handsm@ewhain.net"
-  facebook: 
+ # facebook: 
   github: "https://godsoomin.github.io/"
-  twitter: 
-  patreon: 
+ # twitter: 
+ # patreon: 
   youtube: soominway
 #  reddit: yourname
 #  linkedin: daattali
@@ -186,7 +186,7 @@ date_format: "%B %-d, %Y"
 # --- You don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Korea"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
