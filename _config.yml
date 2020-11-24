@@ -6,19 +6,19 @@
 # --- Required options --- #
 
 # Name of website
-title: My Website
+title: SOOMIN WORLD
 
 # Your name to show in the footer
-author: Some Person
+author: SOHN SOOMIN
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Hello:
+    - 방가방가: 
+    - 반가워요~: 
+  만반잘부: 
 
 # --- Logo --- #
 
