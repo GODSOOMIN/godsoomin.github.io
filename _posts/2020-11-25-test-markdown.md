@@ -16,6 +16,10 @@ comments: true
 오늘은 미세먼지 데이터를 활용하여 시각화를 손수민들어 볼거에요~
 파이썬과 데이터만 있으면 어디든 갈 수 있죠.
 
+우리가 만들건 ----이러한 결과를 만들어 볼 것이고요~
+먼저 데이터 출처는 -----입니다.
+
+
 
 This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
 
