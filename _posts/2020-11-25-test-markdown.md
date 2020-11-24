@@ -1,12 +1,21 @@
 ---
 layout: post
-title: Sample blog post
-subtitle: Each post also has a subtitle
+title: 손수민든 데이터 시각화
+subtitle: 나중에 채우기. 
 gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+tags: [시각화]
 comments: true
 ---
+
+헬로 여러분들 ~ 요즈음 미세먼지가 심각해졌죠?
+빨래 널어야하는데 빨래에 미세먼지가 철-썩- 달라붙을까봐 걱정 또 걱정이네요~
+여름에는 장마여서 못널어~ 겨울에는 얼어서 못널어~ 봄과 가을에는 미세먼지 때문에 못 널어~
+더 넓은 집으로 이사가서 건조기를 얼른 장만해야겠어요!
+
+아무튼 잡담은 그만하고 
+오늘은 미세먼지 데이터를 활용하여 시각화를 손수민들어 볼거에요~
+파이썬과 데이터만 있으면 어디든 갈 수 있죠.
+
 
 This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
 
