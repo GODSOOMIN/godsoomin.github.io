@@ -17,7 +17,16 @@ comments: true
 파이썬과 데이터만 있으면 어디든 갈 수 있죠.  
 
 우리가 만들건 ----이러한 결과를 만들어 볼 것이고요~  
-먼저 데이터 출처는 -----입니다.  
+먼저 데이터 출처는 [서울특별시 대기환경정보](https://cleanair.seoul.go.kr/2020/) 입니다.  
+
+데이터는 2019년도 구별 미세먼지 평균 값을 사용했고요  
+![list_img](/assets/img/list.JPG)
+이렇게 생겼습니다.
+
+
+
+
+
 
 
 
@@ -56,11 +65,13 @@ foo(3)
 
 And here is the same code with syntax highlighting:
 
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+```import pandas as pd
+
+file_path = 'pm10.csv'
+pm10 = pd.read_csv(file_path)
+
+pm10
+
 ```
 
 And here is the same code yet again but with line numbers:
