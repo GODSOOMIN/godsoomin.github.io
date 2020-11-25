@@ -20,7 +20,17 @@ comments: true
 먼저 데이터 출처는 [서울특별시 대기환경정보](https://cleanair.seoul.go.kr/2020/) 입니다.  
 
 데이터는 2019년도 구별 미세먼지 평균 값을 사용했고요  
-![list_img](/assets/img/list.JPG)
+```import pandas as pd
+
+file_path = 'pm10.csv'
+pm10 = pd.read_csv(file_path)
+
+pm10
+
+```
+요로코롬 코드를 작성해서 확인해보니  
+
+![list_img](/assets/img/list.JPG)  
 이렇게 생겼습니다.
 
 
