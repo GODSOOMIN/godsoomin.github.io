@@ -35,7 +35,7 @@ pm10
 이걸 수치를 지도에 매핑시켜서 한눈에 비교해 봅시다!  
 
 
-다행히도 https://github.com/southkorea/seoul-maps 위 깃헙 주소에서  
+다행히도 (https://github.com/southkorea/seoul-maps) 위 깃헙 주소에서  
 서울시의 행정구를 polygon으로 나눈 geojson파일을 제공 하고있습니다!
 
 
