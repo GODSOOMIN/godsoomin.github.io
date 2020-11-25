@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 손수민든 데이터 시각화
-subtitle: 나중에 채우기. 
-gh-repo: daattali/beautiful-jekyll
+subtitle: 파이썬 folium 라이브러리와 서울시 행정구 geo_json을 이용한 시각화
+#gh-repo: daattali/beautiful-jekyll
 tags: [시각화]
 comments: true
 ---
