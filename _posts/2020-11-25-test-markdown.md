@@ -16,7 +16,8 @@ comments: true
 오늘은 미세먼지 데이터를 활용하여 시각화를 손수민들어 볼거에요~  
 파이썬과 데이터만 있으면 어디든 갈 수 있죠.  
 
-우리가 만들건 ----이러한 결과를 만들어 볼 것이고요~  
+우리가 만들건 ![list_img](/assets/img/list.JPG)  
+이러한 결과를 만들어 볼 것이고요~  
 먼저 데이터 출처는 [서울특별시 대기환경정보](https://cleanair.seoul.go.kr/2020/) 입니다.  
 
 데이터는 2019년도 구별 미세먼지 평균 값을 사용했고요  
@@ -91,82 +92,6 @@ fill_color에는 미세먼지 색깔과 비슷한 옐로우 오렌지 브라운�
 ![map_img](/assets/img/map.JPG) 
 
 
-
-
-
-
-
-
-
-
-
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
-
-**Here is some bold text**
-
-## Here is a secondary heading
-
-Here's a useless table:
-
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
-
-How about a yummy crepe?
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
-
-It can also be centered!
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```import pandas as pd
-
-file_path = 'pm10.csv'
-pm10 = pd.read_csv(file_path)
-
-pm10
-
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+참 간단하고 쉽죠?  
+읽어주셔서 감사합니다. ㅎㅎ 
+꾸벅 (_ _ )b
