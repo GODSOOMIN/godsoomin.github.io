@@ -16,7 +16,8 @@ comments: true
 오늘은 미세먼지 데이터를 활용하여 시각화를 손수민들어 볼거에요~  
 파이썬과 데이터만 있으면 어디든 갈 수 있죠.  
 
-우리가 만들건 ![map_img](/assets/img/map.JPG) 
+우리가 만들건  
+![map_img](/assets/img/map.JPG) 
 이러한 결과를 만들어 볼 것이고요~  
 먼저 데이터 출처는 [서울특별시 대기환경정보](https://cleanair.seoul.go.kr/2020/) 입니다.  
 
