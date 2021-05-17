@@ -97,6 +97,8 @@ with open('yourfile_path.txt','w') as f:
   f.writelines('%s\n' % i['text'] for i in srt)
 ```
 단 세줄만에 자막을 읽고, 이를 한줄 씩 텍스트 파일에 저장하는 코드입니다.  
+파일을 오픈하고, 각 라인에 딕셔너리의 text만을 추출하여 작성하는 코드입니다.  
+원래는 정말 복잡한 코드였는데 이렇게 간단하게 표현할 수 있네요.  
 전 이렇게 간단한 코드를 볼때마다 30분을 달리고 냉수를 먹은 것처럼 시원한 감정을 느낍니다.  
 클린한 코드를 작성할 수 있도록 더욱더 노력해야겠습니다.  
 앗차차. 진짜로 저장이 잘되었나 확인해볼까요?  
@@ -105,9 +107,78 @@ with open('yourfile_path.txt','w') as f:
   
 이제 유튜브 생산자인 유튜버의 자막 추출을 완료하였으니까, 이제 유튜브 소비자인 시청자의 댓글도 수집해 볼까용~?  
 댓글을 수집하는데는 google-api-python-client를 사용하였습니다.  
+이걸 이용해서 youtube data api v3를 사용할 예정입니당~  
 https://pypi.org/project/google-api-python-client/  
 
+앗차차. 자막을 추출하기전에 google api key가 필요합니다. 
+https://console.cloud.google.com/apis  
 
+다음과 같이 파란동그라미를 눌러 호다다닥 만들어옵시다.  
+그리고 코드를 작성하기 전, 라이브러리를 임포트해주고 api key를 변수에 저장해 둡시다.  
+
+```
+!pip install google-api-python-client
+import pandas
+from googleapiclient.discovery import build
+api_key = your_api_key
+```
+이렇게요! 참 쉽죠?  
+
+이제 api를 쏴서 한번 코멘트를 추출해 봅시당!  
+
+```
+comments = list()
+  api_obj = build('youtube', 'v3', developerKey=api_key)
+
+
+  response = api_obj.commentThreads().list(part='snippet,replies', videoId=video_id, maxResults=100).execute()
+ 
+  while response:
+      for item in response['items']: 
+          comment = item['snippet']['topLevelComment']['snippet']
+          comments.append([comment['textDisplay'], comment['authorDisplayName'], comment['publishedAt'], comment['likeCount']])
+ 
+          if item['snippet']['totalReplyCount'] > 0:
+              for reply_item in item['replies']['comments']:
+                  reply = reply_item['snippet']
+                  comments.append([reply['textDisplay'], reply['authorDisplayName'], reply['publishedAt'], reply['likeCount']])
+ 
+      if 'nextPageToken' in response:
+          response = api_obj.commentThreads().list(part='snippet,replies', videoId=video_id, pageToken=response['nextPageToken'], maxResults=100).execute()
+      else:
+          break
+```
+
+먼저 댓글 하나하나를 저장해둘 comments 리스트를 선언합니다. 여기엔 이제 댓글들이 하나하나 들어갈 것입니다.  
+그리고 api의 response를 받습니다. 그리고 response의 끝까지 while문으로 훑어줍니다. response는 json 형태인데, item안에 topLevelComment가있고 또 그안에 snippet이 있습니다.
+그 안에서 textDisplay는 댓글을 뜻하고, authorDisplayName은 댓글을 단 유저의 이름, publishedAt은 댓글이 달린 날짜, likeCount는 좋아요의 갯수를 말합니다.  
+이렇게 돌 때마다 comments에 append가 됩니당.  
+그리고 만약 답글이 있다면, 답글을 체크한 후에 답글 역시 comments에 append해줍니다.  
+그리고, 댓글은 한 요청당 100개씩 받아오는데, 이를 댓글의 갯수 끝까지 받아옵니당.  
+만일 다 받아왔다면 break로 빠져나와줍니다.  
+한번 잘 저장되었는지 확인해 볼까요?  
+리스트로 잘 받아와 졌군요. 이 친구를 조금 더 보기 좋게, 저장하기 좋게 DataFrame으로 다뤄 봅시다.  
+```
+df = pandas.DataFrame(comments,columns=['comment', 'id', 'date', 'num_likes'])
+```
+칼럼에 넣고싶은 칼럼명을 넣습니다. 그리고 우리의 사랑스러운 리스트 comments를 넣어주고 데이터프레임 객체를 생성합니다.  
+잘되었나 결과를 확인해 볼까요?  
+res2  
+잘되었군요! 이제 이 결과를 csv파일로 저장하는 일만 남았습니다.  
+```
+df.to_csv('yourfilepath.csv', encoding = 'utf-8-sig',index = False)
+```
+저장할 파일 경로를 설정하고, 인코딩은 utf-8-sig로 해줍니다. 저는 이상하게 utf-8로 저장을 해두면, 나중에 다시 불러올 때 글자가 깨지더라고요.  
+근데 얘는 안깨져서 이렇게 저장을 해둡니다.  
+그리고 index는 False로 해둡니다.  
+잘 저장되었나 확인해볼까요?
+res3  
+잘 저장이 된 모습입니다.  
+이걸로 이제 유튜브의 데이터를 extract 할 수 있는 능력을 가지게 되었답니다.  
+데이터 분석의 핵심중 핵심은 역시 데이터를 추출 할 수 있는 능력 아닐까요?  
+이제 이 추출한 데이터를 분석한결과는 저희 고독한 늑대 둘의 논문을 참고해주세요!  
+읽어주셔서 감사합니다.  
+행복한 여름 되시길 바랄게요~  
 
 
 
