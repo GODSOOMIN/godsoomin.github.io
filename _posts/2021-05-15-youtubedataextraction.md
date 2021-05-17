@@ -33,6 +33,36 @@ comments: true
 시작해볼까요~?  
   
 먼저 자막을 추출해 봅시다. 자막은 txt파일에 저장할 예정입니다!  
+자막을 추출하기 위해 Youtube Transcript API를 사용할 예정입니다!  
+https://pypi.org/project/youtube-transcript-api/  
+진짜 간단해요. 누가 만들어뒀는지 정말 감사합니다...  
+
+```
+from youtube_transcript_api import YouTubeTranscriptApi
+
+YouTubeTranscriptApi.get_transcript(video_id)
+```
+다음과 같이 라이브러리를 임포트 해주고, video_id에 자막을 추출할 비디오의 아이디를 넣으면 됩니다.  
+그리고 한번 쏴주면
+```
+[
+    {
+        'text': 'Hey there',
+        'start': 7.58,
+        'duration': 6.13
+    },
+    {
+        'text': 'how are you',
+        'start': 14.08,
+        'duration': 7.58
+    },
+    # ...
+]
+```  
+다음과같이 딕셔너리 형태로 텍스트, 텍스트의 시작시간, 지속시간을 반환해준다고 합니다.  
+한번 저 위의 유튜브로 시도해볼까요~?  
+유튜브의 비디오 아이디는 다음과 같이 v= 뒤에 있는 부분이 비디오 아이디입니다.
+
 
 
 
